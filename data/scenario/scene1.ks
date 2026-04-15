@@ -19,22 +19,28 @@
 ;無音寄りの立ち上がり
 @stopbgm fadeout="1000"
 
+;将来のログ改変を見据え、一部文を変数経由で表示
+[iscript]
+tf.intro_line_1 = "今夜の廊下は、";
+tf.intro_line_2 = "音が吸い込まれていくみたいだった。";
+tf.intro_line_3 = "足を止めるたび、止めなければよかった気がする。";
+[endscript]
+
 #
-今夜の廊下は、
-音が吸い込まれていくみたいだった。[p]
-足を止めるたび、
-止めなければよかった気がする。[p]
+[emb exp="tf.intro_line_1"]
+[emb exp="tf.intro_line_2"][p]
+[emb exp="tf.intro_line_3"][p]
 
 [delay speed="48"]
 
 言い訳はいくつでも用意してきた。
-それでも、扉の前に立つと、
-どれも役に立たない。[p]
+それでも、扉の前に立つと
+どれも、役に立たない。[p]
 
-;導入用のシンプルな選択肢
+;導入用のシンプルな選択肢（1つだけごく軽い文体ズレ）
 [glink color="black" size="26" x="320" width="640" y="190" text="このまま帰る" target="*intro_choice_leave"]
 [glink color="black" size="26" x="320" width="640" y="280" text="扉に触れる" target="*intro_choice_touch"]
-[glink color="black" size="26" x="320" width="640" y="370" text="少しだけ聞き耳を立てる" target="*intro_choice_listen"]
+[glink color="black" size="26" x="320" width="640" y="370" text="少しだけ聞き耳を立てる。" target="*intro_choice_listen"]
 [s]
 
 *intro_choice_leave
@@ -66,10 +72,17 @@ f.dependence += 1;
 @jump target="*intro_outro"
 
 *intro_outro
+[iscript]
+if (f.fear >= 1 || f.doubt >= 1) {
+    tf.outro_line = "静かにこちらを見ていた。";
+} else {
+    tf.outro_line = "静かに、こちらを見ていた。";
+}
+[endscript]
 #
 その夜、最初の違和感は
 ただの気のせいという顔で、
-静かにこちらを見ていた。[p]
+[emb exp="tf.outro_line"][p]
 
 [s]
 
