@@ -1,75 +1,118 @@
-;ティラノスクリプトサンプルゲーム
+;導入シーン
 
-*start
+*intro
 
-[cm  ]
+[cm]
 [clearfix]
 [start_keyconfig]
 
+[bg storage="rouka.jpg" time="1200" method="crossfade"]
 
-[bg storage="room.jpg" time="100"]
+;導入ではメニューを隠して没入感を優先
+@hidemenubutton
 
-;メニューボタンの表示
-@showmenubutton
-
-;メッセージウィンドウの設定
-[position layer="message0" left=160 top=500 width=1000 height=200 page=fore visible=true]
-
-;文字が表示される領域を調整
-[position layer=message0 page=fore margint="45" marginl="50" marginr="70" marginb="60"]
-
-
-;メッセージウィンドウの表示
+;メッセージウィンドウの設定（少し重めの余白）
+[position layer="message0" left=150 top=492 width=980 height=175 page=fore visible=true]
+[position layer=message0 page=fore margint="34" marginl="48" marginr="48" marginb="32"]
 @layopt layer=message0 visible=true
 
-;キャラクターの名前が表示される文字領域
-[ptext name="chara_name_area" layer="message0" color="white" size=28 bold=true x=180 y=510]
+;無音寄りの立ち上がり
+@stopbgm fadeout="1000"
 
-;上記で定義した領域がキャラクターの名前表示であることを宣言（これがないと#の部分でエラーになります）
-[chara_config ptext="chara_name_area"]
+;将来のログ改変を見据え、一部文を変数経由で表示
+[iscript]
+if (f.intro_visit_count === undefined) f.intro_visit_count = 0;
+f.intro_visit_count += 1;
 
-;このゲームで登場するキャラクターを宣言
-;akane
-[chara_new  name="akane" storage="chara/akane/normal.png" jname="あかね"  ]
-;キャラクターの表情登録
-[chara_face name="akane" face="angry" storage="chara/akane/angry.png"]
-[chara_face name="akane" face="doki" storage="chara/akane/doki.png"]
-[chara_face name="akane" face="happy" storage="chara/akane/happy.png"]
-[chara_face name="akane" face="sad" storage="chara/akane/sad.png"]
-
-
-;yamato
-[chara_new  name="yamato"  storage="chara/yamato/normal.png" jname="やまと" ]
+tf.intro_line_1 = "今夜の廊下は、";
+if (f.intro_visit_count >= 2) {
+    tf.intro_line_2 = "音が吸い込まれていく、みたいだった。";
+} else {
+    tf.intro_line_2 = "音が吸い込まれていくみたいだった。";
+}
+tf.intro_line_3 = "足を止めるたび、止めなければよかった気がする。";
+[endscript]
 
 #
-さて、ゲームが簡単に作れるというから、来てみたものの[p]
+[emb exp="tf.intro_line_1"]
+[emb exp="tf.intro_line_2"][p]
+[emb exp="tf.intro_line_3"][p]
 
-誰もいねぇじゃねぇか。[p]
-……[p]
-帰るか。。。[p]
+[delay speed="48"]
 
-[font  size="30"   ]
-#?
-ちょっとまったーーーーー[p]
-[resetfont  ]
+言い訳はいくつでも用意してきた。
+それでも、扉の前に立つと
+どれも、役に立たない。[p]
 
+;導入用のシンプルな選択肢（1つだけごく軽い文体ズレ）
+[glink color="black" size="26" x="320" width="640" y="190" text="このまま帰る" target="*intro_choice_leave"]
+[glink color="black" size="26" x="320" width="640" y="280" text="扉に触れる" target="*intro_choice_touch"]
+[glink color="black" size="26" x="320" width="640" y="370" text="少しだけ聞き耳を立てる。" target="*intro_choice_listen"]
+[s]
+
+*intro_choice_leave
+[iscript]
+f.doubt += 1;
+f.intro_choice = "leave";
+tf.choice_result_line_1 = "帰る理由を探した。";
+tf.choice_result_line_2 = "見つかったのは、戻れない理由だけだった。";
+[endscript]
 #
-誰だ！？[p]
+[emb exp="tf.choice_result_line_1"]
+[emb exp="tf.choice_result_line_2"][p]
+@jump target="*intro_outro"
 
-;キャラクター登場
-[chara_show  name="akane"  ]
-#?
-こんにちは。[p]
-私の名前はあかね。[p]
-#あかね
-もしかして、ノベルゲームの開発に興味があるの？[p]
+*intro_choice_touch
+[iscript]
+f.complicity += 1;
+f.intro_choice = "touch";
+tf.choice_result_line_1 = "冷たい金属に触れた瞬間、";
+tf.choice_result_line_2 = "指先だけが自分のものじゃないみたいに震えた。";
+[endscript]
+#
+[emb exp="tf.choice_result_line_1"]
+[emb exp="tf.choice_result_line_2"][p]
+@jump target="*intro_outro"
 
-[glink  color="blue"  storage="scene1.ks"  size="28"  x="360"  width="500"  y="150"  text="はい。興味あります"  target="*selectinterest"  ]
-[glink  color="blue"  storage="scene1.ks"  size="28"  x="360"  width="500"  y="250"  text="興味あります！"  target="*selectinterest"  ]
-[glink  color="blue"  storage="scene1.ks"  size="28"  x="360"  width="500"  y="350"  text="どちらかと言うと興味あり"  target="*selectinterest"  ]
-[s  ]
-*selectinterest
+*intro_choice_listen
+[iscript]
+f.fear += 1;
+f.dependence += 1;
+f.intro_choice = "listen";
+tf.choice_result_line_1 = "向こう側の気配は、";
+tf.choice_result_line_2 = "沈黙よりわずかに重かった。";
+[endscript]
+#
+[emb exp="tf.choice_result_line_1"]
+[emb exp="tf.choice_result_line_2"][p]
+@jump target="*intro_outro"
 
+*intro_outro
+[iscript]
+if (f.fear >= 1 || f.doubt >= 1) {
+    tf.outro_line = "静かにこちらを見ていた。";
+} else {
+    tf.outro_line = "静かに、こちらを見ていた。";
+}
+
+if (f.intro_choice === "leave") {
+    tf.trace_line = "扉から離れたはずなのに、指先だけが冷たい。";
+} else if (f.intro_choice === "touch") {
+    tf.trace_line = "耳を澄ませていないのに、沈黙の重さだけ残っている。";
+} else {
+    tf.trace_line = "聞き耳を立てただけなのに、踵が半歩ぶん前にある。";
+}
+[endscript]
+#
+その夜、最初の違和感は
+ただの気のせいという顔で、
+[wait time="700"]
+[emb exp="tf.outro_line"][p]
+[emb exp="tf.trace_line"][p]
+
+[s]
+
+*legacy_sample
 [chara_mod  name="akane" face="happy"  ]
 #あかね
 わー。興味あるなんて、嬉しいなー。[p]
