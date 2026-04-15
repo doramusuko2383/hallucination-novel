@@ -241,6 +241,35 @@ body {
     transform: translateZ(0);
 }
 
+/* ミニマルUIモード
+--------------------------------------*/
+body.minimal-ui-mode .button_menu,
+body.minimal-ui-mode .button_skip,
+body.minimal-ui-mode .button_auto,
+body.minimal-ui-mode .button_save,
+body.minimal-ui-mode .button_load,
+body.minimal-ui-mode .button_qsave,
+body.minimal-ui-mode .button_qload,
+body.minimal-ui-mode .button_title,
+body.minimal-ui-mode .button_smart,
+body.minimal-ui-mode .menu_item,
+body.minimal-ui-mode .menu_save_outer,
+body.minimal-ui-mode .menu_load_outer,
+body.minimal-ui-mode .menu_skip_outer,
+body.minimal-ui-mode .menu_window_close_outer,
+body.minimal-ui-mode .menu_back_title_outer,
+body.minimal-ui-mode .menu_close,
+body.minimal-ui-mode .img_label,
+body.minimal-ui-mode .img_next,
+body.minimal-ui-mode .glyph_image,
+body.minimal-ui-mode #mode_glyph_auto,
+body.minimal-ui-mode #mode_glyph_skip,
+body.minimal-ui-mode .layer_menu {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
 /* スクロールバー */
 .area_save_list::-webkit-scrollbar {
     width: 12px;
