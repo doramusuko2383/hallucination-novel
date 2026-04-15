@@ -26,6 +26,6 @@
 胸の奥だけが、嫌にうるさい。[p]
 今夜は、何かがはじまる気がした。[p]
 
-@jump storage="scene1.ks" target="*start"
+@jump storage="scene1.ks"
 
 [s]
