@@ -244,6 +244,9 @@ body {
 /* ミニマルUIモード
 --------------------------------------*/
 body.minimal-ui-mode .button_menu,
+body.minimal-ui-mode .role_button,
+body.minimal-ui-mode .button-auto-sync,
+body.minimal-ui-mode .button-skip-sync,
 body.minimal-ui-mode .button_skip,
 body.minimal-ui-mode .button_auto,
 body.minimal-ui-mode .button_save,
@@ -268,6 +271,19 @@ body.minimal-ui-mode .layer_menu {
     display: none !important;
     visibility: hidden !important;
     pointer-events: none !important;
+}
+
+body.minimal-ui-mode .message_outer {
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+}
+
+body.minimal-ui-mode .message_inner {
+    text-shadow: none !important;
+    letter-spacing: 0.02em;
 }
 
 /* スクロールバー */
