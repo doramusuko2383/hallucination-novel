@@ -20,6 +20,19 @@ if (f.complicity === undefined) f.complicity = 0;
 if (f.fear === undefined) f.fear = 0;
 if (f.dependence === undefined) f.dependence = 0;
 if (f.doubt === undefined) f.doubt = 0;
+
+;行動ベースのフラグ（選択/行動の記録）
+if (f.used_ability_shota === undefined) f.used_ability_shota = false;
+if (f.used_ability_ayaka === undefined) f.used_ability_ayaka = false;
+if (f.investigated_ayaka === undefined) f.investigated_ayaka = false;
+
+;心理フラグ（状態変化の記録）
+if (f.feels_guilt === undefined) f.feels_guilt = false;
+if (f.trust_megumi === undefined) f.trust_megumi = false;
+if (f.has_crossed_line === undefined) f.has_crossed_line = false;
+
+;デバッグ補助（表示用スナップショット）
+if (f.debug_flags_snapshot === undefined) f.debug_flags_snapshot = "";
 [endscript]
 
 ;起動直後に本編へ
