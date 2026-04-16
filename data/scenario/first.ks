@@ -16,6 +16,8 @@
 
 ;導入で使用する隠しパラメータの初期化（UI表示なし）
 [iscript]
+document.body.classList.remove("scene3-layout-fix");
+
 if (f.complicity === undefined) f.complicity = 0;
 if (f.fear === undefined) f.fear = 0;
 if (f.dependence === undefined) f.dependence = 0;
@@ -51,6 +53,6 @@ if (f.debug_flags_snapshot === undefined) f.debug_flags_snapshot = "";
 誰にも見られていないはずなのに、
 背中だけがずっと落ち着かない。[p]
 
-@jump storage="scene1.ks" target="*intro"
+@jump storage="scene3.ks" target="*chapter3"
 
 [s]
