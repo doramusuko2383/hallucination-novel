@@ -109,15 +109,22 @@ f.intro_choice = "touch";
 f.intro_choice_label = "扉に触れる";
 
 ;行動/心理フラグ更新
+var _was_used_ability_shota = (f.used_ability_shota === true);
 f.used_ability_shota = true;
+tf.should_play_ability_fx = !_was_used_ability_shota;
 f.has_crossed_line = true;
 
 tf.choice_result_line_1 = "冷たい金属に触れた瞬間、";
 tf.choice_result_line_2 = "指先だけが自分のものじゃないみたいに震えた。";
 [endscript]
 #
+[if exp="tf.should_play_ability_fx"]
+[call storage="effects.ks" target="*ability_activation_fx"]
+[endif]
 [emb exp="tf.choice_result_line_1"]
+[wait time="180"]
 [emb exp="tf.choice_result_line_2"][p]
+[delay speed="48"]
 @jump target="*intro_outro"
 
 *intro_choice_listen
