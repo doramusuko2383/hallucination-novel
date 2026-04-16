@@ -51,6 +51,6 @@ if (f.debug_flags_snapshot === undefined) f.debug_flags_snapshot = "";
 誰にも見られていないはずなのに、
 背中だけがずっと落ち着かない。[p]
 
-@jump storage="scene1.ks" target="*intro"
+@jump storage="scene3.ks" target="*chapter3"
 
 [s]
