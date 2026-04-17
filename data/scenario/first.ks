@@ -66,12 +66,6 @@ if (f.debug_flags_snapshot === undefined) f.debug_flags_snapshot = "";
 [delay speed="42"]
 [wa]
 
-#
-静まり返っている。[p]
-心臓の音だけが、近すぎる。[p]
-誰にも見られていないはずなのに、
-背中だけがずっと落ち着かない。[p]
-
 @jump storage="chapter1.ks" target="*chapter1"
 
 [s]
