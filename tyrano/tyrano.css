@@ -294,12 +294,13 @@ body.scene3-layout-fix .message_outer {
 
 body.scene3-layout-fix .message_inner {
     text-align: left !important;
-    padding-left: 48px !important;
-    padding-right: 48px !important;
+    padding-left: 56px !important;
+    padding-right: 56px !important;
+    padding-top: 28px !important;
     line-height: 1.65 !important;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     overflow: hidden !important;
     box-sizing: border-box;
 }
@@ -311,6 +312,25 @@ body.scene3-layout-fix .message_inner p {
 
 body.scene3-layout-fix .message_inner > * {
     width: 100%;
+}
+
+/* シネマ寄り字幕デザイン */
+.message_outer {
+    background: rgba(10, 16, 22, 0.34) !important;
+    border: 1px solid rgba(220, 230, 240, 0.14) !important;
+    box-shadow: none !important;
+    backdrop-filter: blur(1px);
+}
+
+.message_inner {
+    font-weight: 500 !important;
+    letter-spacing: 0.01em;
+    line-height: 1.62 !important;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.message_inner p {
+    margin: 0.08em 0 !important;
 }
 
 /* スクロールバー */

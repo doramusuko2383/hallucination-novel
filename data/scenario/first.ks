@@ -40,8 +40,8 @@ if (f.debug_flags_snapshot === undefined) f.debug_flags_snapshot = "";
 ;起動直後に本編へ
 [cm]
 [bg storage="rouka.jpg" time="0"]
-[position layer="message0" left=140 top=500 width=1000 height=160 page=fore visible=true]
-[position layer=message0 page=fore margint="28" marginl="42" marginr="42" marginb="28"]
+[position layer="message0" left=210 top=430 width=860 height=200 page=fore visible=true opacity=84]
+[position layer=message0 page=fore margint="30" marginl="56" marginr="56" marginb="30"]
 @layopt layer=message0 visible=true
 
 [delay speed="42"]
