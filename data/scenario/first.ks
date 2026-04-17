@@ -14,6 +14,25 @@
 ;最初は右下のメニューボタンを非表示にする
 [hidemenubutton]
 
+*title_menu
+[cm]
+@layopt layer=message0 visible=false
+[iscript]
+var baseLayer = TG.layer.getLayer("base", "fore");
+baseLayer.css("background-image", "none");
+baseLayer.css("background-color", "#000000");
+[endscript]
+
+[glink name="title-choice" color="black" size="34" x="0" y="320" width="1280" text="最初から" target="*title_newgame"]
+[glink name="title-choice" color="black" size="34" x="0" y="390" width="1280" text="続きから" target="*title_continue"]
+[s]
+
+*title_continue
+[showload]
+@jump target="*title_menu"
+
+*title_newgame
+
 ;導入で使用する隠しパラメータの初期化（UI表示なし）
 [iscript]
 document.body.classList.remove("scene3-layout-fix");
