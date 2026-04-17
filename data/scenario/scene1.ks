@@ -12,8 +12,8 @@
 @hidemenubutton
 
 ;メッセージウィンドウの設定（少し重めの余白）
-[position layer="message0" left=150 top=492 width=980 height=175 page=fore visible=true]
-[position layer=message0 page=fore margint="34" marginl="48" marginr="48" marginb="32"]
+[position layer="message0" left=150 top=600 width=980 height=150 page=fore visible=true]
+[position layer=message0 page=fore margint="16" marginl="48" marginr="48" marginb="20"]
 @layopt layer=message0 visible=true
 
 ;無音寄りの立ち上がり
