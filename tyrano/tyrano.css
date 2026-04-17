@@ -286,6 +286,26 @@ body.minimal-ui-mode .message_inner {
     letter-spacing: 0.02em;
 }
 
+/* scene3 のテキスト表示安定化 */
+body.scene3-layout-fix .message_outer {
+    height: 175px !important;
+    overflow: hidden !important;
+}
+
+body.scene3-layout-fix .message_inner {
+    text-align: left !important;
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+    line-height: 1.65 !important;
+    overflow: hidden !important;
+    box-sizing: border-box;
+}
+
+body.scene3-layout-fix .message_inner p {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
 /* スクロールバー */
 .area_save_list::-webkit-scrollbar {
     width: 12px;

@@ -16,6 +16,8 @@
 
 ;導入で使用する隠しパラメータの初期化（UI表示なし）
 [iscript]
+document.body.classList.remove("scene3-layout-fix");
+
 if (f.complicity === undefined) f.complicity = 0;
 if (f.fear === undefined) f.fear = 0;
 if (f.dependence === undefined) f.dependence = 0;
