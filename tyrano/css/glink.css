@@ -11215,3 +11215,26 @@
 .btn_33_black:active::after {
   opacity: 0;
 }
+
+/* title narrative choices */
+.title-choice {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background: transparent;
+	box-shadow: none;
+	text-shadow: none;
+	border-radius: 0;
+	color: #e6e6e6;
+	letter-spacing: 0.12em;
+	font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+	font-weight: 400;
+	text-align: center;
+}
+
+.title-choice:hover,
+.title-choice:active {
+	top: 0;
+	color: #e6e6e6;
+	background: transparent;
+}
