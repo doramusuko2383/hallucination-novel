@@ -9,5 +9,5 @@
 
 *gamestart
 ;一番最初のシナリオファイルへジャンプする
-@jump storage="scene1.ks"
+@jump storage="chapter1.ks" target="*chapter1"
 
