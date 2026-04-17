@@ -23,7 +23,6 @@ baseLayer.css("background-image", "none");
 baseLayer.css("background-color", "#000000");
 [endscript]
 
-[ptext layer="free" x="0" y="240" width="1280" align="center" size="24" color="0x9a9a9a" text="まだ、何も始まっていない。"]
 [glink name="title-choice" color="black" size="34" x="0" y="320" width="1280" text="最初から" target="*title_newgame"]
 [glink name="title-choice" color="black" size="34" x="0" y="390" width="1280" text="続きから" target="*title_continue"]
 [s]
