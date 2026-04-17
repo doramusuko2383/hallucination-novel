@@ -263,7 +263,6 @@ body.minimal-ui-mode .menu_window_close_outer,
 body.minimal-ui-mode .menu_back_title_outer,
 body.minimal-ui-mode .menu_close,
 body.minimal-ui-mode .img_label,
-body.minimal-ui-mode .img_next,
 body.minimal-ui-mode .glyph_image,
 body.minimal-ui-mode #mode_glyph_auto,
 body.minimal-ui-mode #mode_glyph_skip,
@@ -275,9 +274,15 @@ body.minimal-ui-mode .layer_menu {
 
 body.minimal-ui-mode .message_outer {
     border: none !important;
-    border-radius: 0 !important;
+    border-radius: 10px !important;
     box-shadow: none !important;
-    background-image: none !important;
+    background-image: linear-gradient(
+        180deg,
+        rgba(3, 6, 9, 0) 0%,
+        rgba(3, 6, 9, 0.22) 32%,
+        rgba(3, 6, 9, 0.62) 72%,
+        rgba(3, 6, 9, 0.82) 100%
+    ) !important;
     backdrop-filter: none !important;
 }
 
@@ -296,6 +301,7 @@ body.minimal-ui-mode .message_inner {
     box-sizing: border-box;
     font-size: 21px !important;
     font-weight: 400 !important;
+    color: #f0f0f0 !important;
 }
 
 .message_inner p {
@@ -315,15 +321,22 @@ body.minimal-ui-mode .message_inner {
 
 /* シネマ寄り字幕デザイン */
 .message_outer {
-    background: rgba(10, 16, 22, 0.34) !important;
-    border: 1px solid rgba(220, 230, 240, 0.14) !important;
+    background: linear-gradient(
+        180deg,
+        rgba(5, 9, 14, 0) 0%,
+        rgba(5, 9, 14, 0.22) 28%,
+        rgba(5, 9, 14, 0.58) 68%,
+        rgba(5, 9, 14, 0.84) 100%
+    ) !important;
+    border: 1px solid rgba(220, 230, 240, 0.09) !important;
+    border-radius: 10px !important;
     box-shadow: none !important;
     backdrop-filter: blur(1px);
 }
 
 .message_inner {
     letter-spacing: 0.01em;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 /* スクロールバー */
@@ -654,12 +667,12 @@ div.img_next {
 
 /* 丸 */
 .img_next_circle {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     display: inline-block;
-    background: white;
-    background: rgb(206, 231, 245);
+    background: #8ec5e6;
+    box-shadow: 0 0 6px rgba(142, 197, 230, 0.55);
 }
 
 /* 四角 */
@@ -712,10 +725,10 @@ div.img_next {
 /* 滑らかな点滅 */
 .img_next_flash {
     animation-name: img_next_flash;
-    animation-duration: 1800ms;
+    animation-duration: 2100ms;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
-    opacity: 0;
+    opacity: 0.35;
 }
 
 @keyframes img_next_flash {
