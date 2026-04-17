@@ -7,7 +7,7 @@
 [start_keyconfig]
 
 [bg storage="rouka.jpg" time="800" method="crossfade"]
-[position layer="message0" left=150 top=492 width=980 height=175 page=fore visible=true]
+[position layer="message0" left=150 top=530 width=980 height=175 page=fore visible=true]
 [position layer=message0 page=fore margint="34" marginl="48" marginr="48" marginb="32"]
 @layopt layer=message0 visible=true
 [iscript]
