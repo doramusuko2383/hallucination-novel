@@ -7,12 +7,9 @@
 [start_keyconfig]
 
 [bg storage="rouka.jpg" time="800" method="crossfade"]
-[position layer="message0" left=210 top=430 width=860 height=200 page=fore visible=true opacity=84]
+[position layer="message0" left=210 top=620 width=860 height=200 page=fore visible=true opacity=84]
 [position layer=message0 page=fore margint="30" marginl="56" marginr="56" marginb="30"]
 @layopt layer=message0 visible=true
-[iscript]
-document.body.classList.add("scene3-layout-fix");
-[endscript]
 
 #
 【字幕デザインサンプル：通常会話】[p]

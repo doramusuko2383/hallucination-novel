@@ -35,8 +35,6 @@ baseLayer.css("background-color", "#000000");
 
 ;導入で使用する隠しパラメータの初期化（UI表示なし）
 [iscript]
-document.body.classList.remove("scene3-layout-fix");
-
 if (f.complicity === undefined) f.complicity = 0;
 if (f.fear === undefined) f.fear = 0;
 if (f.dependence === undefined) f.dependence = 0;
@@ -59,7 +57,7 @@ if (f.debug_flags_snapshot === undefined) f.debug_flags_snapshot = "";
 ;起動直後に本編へ
 [cm]
 [bg storage="rouka.jpg" time="0"]
-[position layer="message0" left=210 top=430 width=860 height=200 page=fore visible=true opacity=84]
+[position layer="message0" left=210 top=620 width=860 height=200 page=fore visible=true opacity=84]
 [position layer=message0 page=fore margint="30" marginl="56" marginr="56" marginb="30"]
 @layopt layer=message0 visible=true
 

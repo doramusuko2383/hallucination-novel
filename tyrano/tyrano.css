@@ -286,32 +286,31 @@ body.minimal-ui-mode .message_inner {
     letter-spacing: 0.02em;
 }
 
-/* scene3 のテキスト表示安定化 */
-body.scene3-layout-fix .message_outer {
-    height: 200px !important;
-    overflow: hidden !important;
-}
-
-body.scene3-layout-fix .message_inner {
+/* 全シーン共通の本文レイアウト */
+.message_inner {
     text-align: left !important;
-    padding-left: 56px !important;
-    padding-right: 56px !important;
-    padding-top: 28px !important;
-    line-height: 1.65 !important;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    padding: 22px 56px 28px !important;
+    line-height: 1.7 !important;
+    display: block !important;
     overflow: hidden !important;
     box-sizing: border-box;
+    font-size: 21px !important;
+    font-weight: 400 !important;
 }
 
-body.scene3-layout-fix .message_inner p {
-    margin: 0 !important;
+.message_inner p {
+    margin: 0.2em 0 !important;
     padding: 0 !important;
 }
 
-body.scene3-layout-fix .message_inner > * {
+.message_inner > * {
     width: 100%;
+}
+
+.message_inner .current_span {
+    font-size: 21px !important;
+    font-weight: 400 !important;
+    line-height: 1.7 !important;
 }
 
 /* シネマ寄り字幕デザイン */
@@ -323,14 +322,8 @@ body.scene3-layout-fix .message_inner > * {
 }
 
 .message_inner {
-    font-weight: 500 !important;
     letter-spacing: 0.01em;
-    line-height: 1.62 !important;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
-}
-
-.message_inner p {
-    margin: 0.08em 0 !important;
 }
 
 /* スクロールバー */
