@@ -12,7 +12,7 @@
 @hidemenubutton
 
 ;メッセージウィンドウの設定（少し重めの余白）
-[position layer="message0" left=0 top=600 width=1280 height=150 page=fore visible=true]
+[position layer="message0" left=64 top=550 width=1152 height=160 page=fore visible=true]
 [position layer=message0 page=fore margint="16" marginl="0" marginr="0" marginb="20"]
 @layopt layer=message0 visible=true
 
