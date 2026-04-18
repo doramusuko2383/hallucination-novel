@@ -3,6 +3,30 @@
 @import url("./css/animate.css");
 @import url("./css/glink.css");
 
+@font-face {
+    font-family: "NotoSansJP-Regular";
+    src: url("/data/others/font/NotoSansJP-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NotoSansJP-Medium";
+    src: url("/data/others/font/NotoSansJP-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "NotoSansJP-Light";
+    src: url("/data/others/font/NotoSansJP-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* レイヤ
 --------------------------------------*/
 
@@ -16,6 +40,7 @@ body {
     -webkit-tap-highlight-color: transparent;
     overflow: hidden;
     touch-action: manipulation;
+    font-family: "NotoSansJP-Regular", sans-serif !important;
 }
 
 .tyrano_base {
@@ -296,12 +321,14 @@ body.minimal-ui-mode .message_inner {
     text-align: left !important;
     padding: 22px 56px 28px !important;
     line-height: 1.7 !important;
+    letter-spacing: 0.02em !important;
     display: block !important;
     overflow: hidden !important;
     box-sizing: border-box;
+    font-family: "NotoSansJP-Regular", sans-serif !important;
     font-size: 21px !important;
     font-weight: 400 !important;
-    color: #f0f0f0 !important;
+    color: rgba(240, 240, 240, 0.92) !important;
 }
 
 .message_inner p {
@@ -314,6 +341,7 @@ body.minimal-ui-mode .message_inner {
 }
 
 .message_inner .current_span {
+    font-family: "NotoSansJP-Regular", sans-serif !important;
     font-size: 21px !important;
     font-weight: 400 !important;
     line-height: 1.7 !important;
@@ -335,8 +363,12 @@ body.minimal-ui-mode .message_inner {
 }
 
 .message_inner {
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.monologue {
+    font-family: "NotoSansJP-Light", sans-serif;
 }
 
 /* スクロールバー */
