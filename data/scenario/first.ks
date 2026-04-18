@@ -57,8 +57,8 @@ if (f.debug_flags_snapshot === undefined) f.debug_flags_snapshot = "";
 ;起動直後に本編へ
 [cm]
 [bg storage="rouka.jpg" time="0"]
-[position layer="message0" left=210 top=540 width=860 height=160 page=fore visible=true opacity=84]
-[position layer=message0 page=fore margint="30" marginl="56" marginr="56" marginb="30"]
+[position layer="message0" left=64 top=540 width=1152 height=160 page=fore visible=true opacity=84]
+[position layer=message0 page=fore margint="30" marginl="0" marginr="0" marginb="30"]
 @layopt layer=message0 visible=true
 [glyph figure="circle" color="0x8ec5e6" anim="flash" marginl="12" marginb="6"]
 
