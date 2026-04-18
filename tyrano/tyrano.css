@@ -343,6 +343,9 @@ body.minimal-ui-mode .message_inner {
     left: 0 !important;
     bottom: 0 !important;
     width: 100% !important;
+    min-height: 160px !important;
+    display: flex !important;
+    align-items: flex-end !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
