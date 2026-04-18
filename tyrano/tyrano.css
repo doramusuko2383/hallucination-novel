@@ -366,6 +366,12 @@ body.minimal-ui-mode .message_inner {
     }
 }
 
+@media screen and (max-width: 900px) {
+    .message_inner {
+        padding: 18px 28px 24px !important;
+    }
+}
+
 .message_inner {
     letter-spacing: 0.02em;
     text-shadow: none;
@@ -738,6 +744,21 @@ div.img_next {
     }
     100% {
         opacity: 0.45;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes blinkSoft {
+    0% {
+        opacity: 0.3;
+        transform: translateY(0px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(2px);
+    }
+    100% {
+        opacity: 0.3;
         transform: translateY(0px);
     }
 }
