@@ -323,18 +323,18 @@ body.minimal-ui-mode .message_inner {
 .message_inner::before {
     content: "";
     position: absolute;
-    left: -120px;
-    right: -120px;
-    top: -90px;
-    bottom: -60px;
+    left: -10px;
+    width: 1280px;
+    top: -10px;
+    height: 180px;
     pointer-events: none;
     z-index: -1;
     background: linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0.42) 0%,
-        rgba(0, 0, 0, 0.56) 42%,
-        rgba(0, 0, 0, 0.80) 78%,
-        rgba(0, 0, 0, 0.94) 100%
+        rgba(0, 0, 0, 0.26) 0%,
+        rgba(0, 0, 0, 0.42) 38%,
+        rgba(0, 0, 0, 0.72) 72%,
+        rgba(0, 0, 0, 0.92) 100%
     );
 }
 
