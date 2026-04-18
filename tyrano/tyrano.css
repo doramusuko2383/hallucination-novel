@@ -5,9 +5,7 @@
 
 @font-face {
     font-family: "NotoSansJP-Regular";
-    src: url("../data/others/font/NotoSansJP-Regular.woff2") format("woff2"),
-        url("../data/others/font/NotoSansJP-Regular.woff") format("woff"),
-        url("../data/others/font/NotoSansJP-Regular.otf") format("opentype");
+    src: url("/data/others/font/NotoSansJP-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -15,9 +13,7 @@
 
 @font-face {
     font-family: "NotoSansJP-Medium";
-    src: url("../data/others/font/NotoSansJP-Medium.woff2") format("woff2"),
-        url("../data/others/font/NotoSansJP-Medium.woff") format("woff"),
-        url("../data/others/font/NotoSansJP-Medium.otf") format("opentype");
+    src: url("/data/others/font/NotoSansJP-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -25,9 +21,7 @@
 
 @font-face {
     font-family: "NotoSansJP-Light";
-    src: url("../data/others/font/NotoSansJP-Light.woff2") format("woff2"),
-        url("../data/others/font/NotoSansJP-Light.woff") format("woff"),
-        url("../data/others/font/NotoSansJP-Light.otf") format("opentype");
+    src: url("/data/others/font/NotoSansJP-Light.ttf") format("truetype");
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -46,6 +40,7 @@ body {
     -webkit-tap-highlight-color: transparent;
     overflow: hidden;
     touch-action: manipulation;
+    font-family: "NotoSansJP-Regular", sans-serif !important;
 }
 
 .tyrano_base {
