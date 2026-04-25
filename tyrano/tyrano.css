@@ -321,21 +321,7 @@ body.minimal-ui-mode .message_inner {
 }
 
 .message_inner::before {
-    content: "";
-    position: absolute;
-    left: -10px;
-    width: 1280px;
-    top: -10px;
-    height: 180px;
-    pointer-events: none;
-    z-index: -1;
-    background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.26) 0%,
-        rgba(0, 0, 0, 0.42) 38%,
-        rgba(0, 0, 0, 0.72) 72%,
-        rgba(0, 0, 0, 0.92) 100%
-    );
+    content: none;
 }
 
 .message_inner p {
@@ -355,6 +341,26 @@ body.minimal-ui-mode .message_inner {
     margin-right: 4px !important;
 }
 
+/* ===== グラデーションオーバーレイ ===== */
+.gradient_overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 20%,
+        rgba(4, 8, 20, 0.36) 52%,
+        rgba(3, 7, 18, 0.78) 78%,
+        rgba(0, 0, 0, 0.96) 100%
+    );
+    mix-blend-mode: normal;
+    opacity: 1;
+    z-index: 99;
+}
+
 /* シネマ寄り字幕デザイン */
 .message_outer {
     position: absolute !important;
@@ -362,6 +368,7 @@ body.minimal-ui-mode .message_inner {
     bottom: 0 !important;
     width: 100% !important;
     min-height: 160px !important;
+    opacity: 1 !important;
     display: flex !important;
     align-items: flex-end !important;
     border: none !important;
