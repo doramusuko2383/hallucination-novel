@@ -1,6 +1,6 @@
 ;一番最初に呼び出されるファイル
 
-[title name="ハルシネーション"]
+[title name="ティラノスクリプト解説"]
 
 [stop_keyconfig]
 
@@ -8,28 +8,14 @@
 ;ティラノスクリプトが標準で用意している便利なライブラリ群
 ;コンフィグ、CG、回想モードを使う場合は必須
 @call storage="tyrano.ks"
-[call storage="chara_define.ks"]
-[call storage="chara_auto.ks"]
+
+[chara_config pos_mode="false"]
 
 ;最初は右下のメニューボタンを非表示にする
 [hidemenubutton]
 
-*title_menu
-[cm]
-@layopt layer=message0 visible=false
-[iscript]
-var baseLayer = TG.layer.getLayer("base", "fore");
-baseLayer.css("background-image", "none");
-baseLayer.css("background-color", "#000000");
-[endscript]
-
-[glink name="title-choice" color="black" size="34" x="0" y="320" width="1280" text="最初から" target="*title_newgame"]
-[glink name="title-choice" color="black" size="34" x="0" y="390" width="1280" text="続きから" target="*title_continue"]
-[s]
-
-*title_continue
-[showload]
-@jump target="*title_menu"
+;タイトル画面へ移動
+@jump storage="title.ks"
 
 *title_newgame
 
@@ -40,9 +26,13 @@ baseLayer.css("background-color", "#000000");
 @layopt layer=message0 visible=true
 [glyph figure="circle" color="0x8ec5e6" anim="flash" marginl="12" marginb="6"]
 
-[delay speed="42"]
-[wa]
+*a
+Aを選びました
+[jump target="*end"]
 
-@jump storage="chapter1.ks" target="*chapter1"
+*b
+Bを選びました
+[jump target="*end"]
 
-[s]
+*end
+終わりです
