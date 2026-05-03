@@ -38,11 +38,3 @@ baseLayer.css("background-color", "#000000");
 [position layer=message0 page=fore margint="30" marginl="100" marginr="100" marginb="30"]
 @layopt layer=message0 visible=true
 [glyph figure="circle" color="0x8ec5e6" anim="flash" marginl="12" marginb="6"]
-
-
-*b
-Bを選びました
-[jump target="*end"]
-
-*end
-終わりです
