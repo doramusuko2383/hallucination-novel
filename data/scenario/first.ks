@@ -11,6 +11,8 @@
 [call storage="chara_define.ks"]
 [call storage="chara_auto.ks"]
 
+[chara_config pos_mode="false"]
+
 ;ゲームで必ず必要な初期化処理はこのファイルに記述するのがオススメ
 
 ;最初は右下のメニューボタンを非表示にする
