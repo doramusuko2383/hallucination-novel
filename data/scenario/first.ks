@@ -28,8 +28,7 @@ baseLayer.css("background-color", "#000000");
 [s]
 
 *title_continue
-[showload]
-@jump target="*title_menu"
+@jump storage="chapter1.ks" target="*chapter1"
 
 *title_newgame
 
