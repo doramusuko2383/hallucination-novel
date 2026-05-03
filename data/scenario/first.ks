@@ -14,8 +14,22 @@
 ;最初は右下のメニューボタンを非表示にする
 [hidemenubutton]
 
-;タイトル画面へ移動
-@jump storage="title.ks"
+*title_menu
+[cm]
+@layopt layer=message0 visible=false
+[iscript]
+var baseLayer = TG.layer.getLayer("base", "fore");
+baseLayer.css("background-image", "none");
+baseLayer.css("background-color", "#000000");
+[endscript]
+
+[glink name="title-choice" color="white" size="34" x="0" y="320" width="1280" text="最初から" target="*title_newgame"]
+[glink name="title-choice" color="white" size="34" x="0" y="390" width="1280" text="続きから" target="*title_continue"]
+[s]
+
+*title_continue
+[showload]
+@jump target="*title_menu"
 
 *title_newgame
 
