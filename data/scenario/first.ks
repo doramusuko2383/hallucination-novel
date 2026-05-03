@@ -9,6 +9,8 @@
 ;コンフィグ、CG、回想モードを使う場合は必須
 @call storage="tyrano.ks"
 
+[chara_config pos_mode="false"]
+
 ;ゲームで必ず必要な初期化処理はこのファイルに記述するのがオススメ
 
 ;メッセージボックスは非表示
