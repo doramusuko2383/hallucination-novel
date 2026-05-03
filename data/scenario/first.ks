@@ -25,13 +25,12 @@ baseLayer.css("background-image", "none");
 baseLayer.css("background-color", "#000000");
 [endscript]
 
-[glink name="title-choice" color="black" size="34" x="0" y="320" width="1280" text="最初から" target="*title_newgame"]
-[glink name="title-choice" color="black" size="34" x="0" y="390" width="1280" text="続きから" target="*title_continue"]
+[glink name="title-choice" color="white" size="34" x="0" y="320" width="1280" text="最初から" target="*title_newgame"]
+[glink name="title-choice" color="white" size="34" x="0" y="390" width="1280" text="続きから" target="*title_continue"]
 [s]
 
 *title_continue
-[showload]
-@jump target="*title_menu"
+@jump storage="chapter1.ks" target="*chapter1"
 
 *title_newgame
 
@@ -64,8 +63,6 @@ if (f.debug_flags_snapshot === undefined) f.debug_flags_snapshot = "";
 @layopt layer=message0 visible=true
 [glyph figure="circle" color="0x8ec5e6" anim="flash" marginl="12" marginb="6"]
 
-[delay speed="42"]
-[wa]
 
 @jump storage="chapter1.ks" target="*chapter1"
 
