@@ -181,42 +181,6 @@ tf.savetext = "<span style='font-size:10px'>"+tf.save_date+"</span><br />"+tf.ti
 [endmacro]
 
 
-;==============================
-; 自動立ち絵表示（#名前フック）
-;==============================
-[chara_new name="恵" storage="chara/megumi/normal.png" jname="恵"]
-[chara_new name="拓海" storage="chara/takumi/normal.png" jname="拓海"]
-[chara_new name="龍也" storage="chara/ryuya/normal.png" jname="龍也"]
-
-[iscript]
-(function(){
-    if (TYRANO.kag.stat.__auto_chara_hooked__) return;
-    TYRANO.kag.stat.__auto_chara_hooked__ = true;
-
-    var AUTO_CHARA_MAP = {"恵": true, "拓海": true, "龍也": true};
-    var AUTO_CHARA_NAMES = Object.keys(AUTO_CHARA_MAP);
-
-    var originalStart = TYRANO.kag.tag.chara_ptext.start;
-
-    TYRANO.kag.tag.chara_ptext.start = function(pm){
-        var speaker = (pm && pm.name) ? pm.name : "";
-
-        if (AUTO_CHARA_MAP[speaker]) {
-            for (var i = 0; i < AUTO_CHARA_NAMES.length; i++) {
-                var name = AUTO_CHARA_NAMES[i];
-                if (name === speaker) {
-                    TYRANO.kag.ftag.startTag("chara_show", {name: name, time: "0", wait: "false"});
-                } else {
-                    TYRANO.kag.ftag.startTag("chara_hide", {name: name, time: "0", wait: "false"});
-                }
-            }
-        }
-
-        return originalStart.call(this, pm);
-    };
-})();
-[endscript]
-
 [return]
 
 
